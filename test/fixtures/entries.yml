@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  day_id: 1
+  event: MyString
+  details: MyText
+
+two:
+  day_id: 1
+  event: MyString
+  details: MyText
