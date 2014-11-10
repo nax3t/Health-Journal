@@ -28,6 +28,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Devise for authentication
 gem 'devise'
 # Use ActiveModel has_secure_password
+# Simple Form
+gem 'simple_form'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
