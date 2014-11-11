@@ -14,7 +14,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="<%= 'active' if current_page?(home_index_path) %>"><%= link_to 'Home', home_index_path %></li>
+        <li class="<%= 'active' if current_page?(home_index_path) || current_page?(root_path) %>"><%= link_to 'Home', home_index_path %></li>
+				<li class="<%= 'active' if current_page?(entries_path) %>"><%= link_to 'Entries', entries_path %></li>
       </ul>
       <% if user_signed_in? %>
       <%= render 'layouts/signed_in' %>
