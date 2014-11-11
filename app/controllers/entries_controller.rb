@@ -1,23 +1,27 @@
 class EntriesController < ApplicationController
-def index
-		@entries = Entry.all
+	def index
+		@user = current_user.id
+		@entries = current_user.entries.all
   end
 
   def create
-		@entry = Entry.create(entry_params)
+		@entry = current_user.entries.create(entry_params)
 		redirect_to entries_path
   end
 
   def new
+		@user = current_user.id
 		@entry = Entry.new
   end
 
    def edit
+		 @user = current_user.id
 		 @entry = Entry.find(params[:id])
   end
 
   def update
-		@entry = Entry.find(params[:id])
+		@user = User.find(params[:user_id])
+		@entry = @user.entries.find(params[:id])
 
 		if @entry.update(entry_params)
       redirect_to entry_path
