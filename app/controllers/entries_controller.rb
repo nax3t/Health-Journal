@@ -4,6 +4,11 @@ class EntriesController < ApplicationController
 		@entries = current_user.entries.all
   end
 
+	def show
+		@user = current_user.id
+		@entry = Entry.find(params[:id])
+	end
+	
   def create
 		@entry = current_user.entries.create(entry_params)
 		redirect_to entries_path
@@ -32,7 +37,7 @@ class EntriesController < ApplicationController
 	
 private
 	def entry_params
-		params.require(:entry).permit(:event, :details)
+		params.require(:entry).permit(:subject, :details, :date)
   end
 	
 end

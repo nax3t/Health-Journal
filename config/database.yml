@@ -1,7 +1,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: appname-dev
+  database: JournalApp-dev
   pool: 5
   host: localhost
   username: action
@@ -10,7 +10,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: appname-test
+  database: JournalApp-test
   pool: 5
   host: localhost
   username: action
@@ -19,7 +19,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: appname-prod
+  database: JournalApp-prod
   pool: 5
   host: localhost
   username: action
