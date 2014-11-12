@@ -31,7 +31,7 @@ gem 'devise'
 # Simple Form
 gem 'simple_form'
 # Rails_12factor for Heroku Deployment
-# gem 'rails_12factor', group: :production
+gem 'rails_12factor', group: :production
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
