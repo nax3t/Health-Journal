@@ -1,0 +1,7 @@
+<h1>Edit Entry</h1>
+<%= simple_form_for(@entry, html: {:class => 'form-horizontal'} ) do |f| %>
+<%= f.input :date, label: false, input_html: {:class => 'form-control', placeholder: "Date"} %>
+<p><%= f.input :subject, label: false, input_html: {:class => 'form-control', placeholder: "Subject"} %></p>
+<p><%= f.input :details, label: false, input_html: {:class => 'form-control', placeholder: "Details"} %></p>
+	<p><%= f.submit "Submit".html_safe, :class => 'btn btn-lg btn-success' %> </p>
+<% end %>

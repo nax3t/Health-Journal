@@ -1,7 +1,10 @@
 <h1><%= "#{current_user.username.capitalize}'s Entries" %></h1>
 <% @entries.each do |entry| %>
-<h2><%= entry.subject %></h2>
+<h2><%= link_to entry.subject, entry_path(entry) %></h2>
 <p><%= entry.details %></p>
 <p><%= entry.date %></p>
+<p><%= link_to 'Edit', edit_entry_path(entry) %> | 
+	<%= link_to 'Delete', entry_path(entry), method: :delete, data: { confirm: 'Are you sure?' } %></p>
 <hr />
 <% end %>
+<p><%= link_to 'Create a New Journal Entry', new_entry_path %></p>

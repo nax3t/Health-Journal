@@ -25,8 +25,7 @@ class EntriesController < ApplicationController
   end
 
   def update
-		@user = User.find(params[:user_id])
-		@entry = @user.entries.find(params[:id])
+		@entry = current_user.entries.find(params[:id])
 
 		if @entry.update(entry_params)
       redirect_to entry_path
@@ -34,6 +33,14 @@ class EntriesController < ApplicationController
       render 'edit'
     end
   end
+	
+	def destroy
+		@user = current_user.id
+		@entry = Entry.find(params[:id])
+		@entry.destroy
+
+		redirect_to entries_path
+	end
 	
 private
 	def entry_params
