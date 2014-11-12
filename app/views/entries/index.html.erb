@@ -1,4 +1,4 @@
-<h1><%= "#{current_user.username}'s Entries" %></h1>
+<h1><%= "#{current_user.username.capitalize}'s Entries" %></h1>
 <% @entries.each do |entry| %>
 <h2><%= entry.subject %></h2>
 <p><%= entry.details %></p>
