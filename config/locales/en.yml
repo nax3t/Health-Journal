@@ -21,4 +21,10 @@
 
 en:
  # hello: "Hello world"
-  
+  datepicker:
+    dformat: '%m/%d/%Y'  
+    pformat: 'MM/DD/YYYY'
+    weekstart: 0               
+  timepicker:
+    dformat: '%R'              
+    pformat: 'HH:mm'
