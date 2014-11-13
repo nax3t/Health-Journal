@@ -13,6 +13,8 @@ class EntriesController < ApplicationController
 	
   def create
 		@entry = current_user.entries.create(entry_params)
+		@entry.date = Date.today
+		@entry.save
 		redirect_to entries_path
   end
 
