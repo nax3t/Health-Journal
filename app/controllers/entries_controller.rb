@@ -1,4 +1,6 @@
 class EntriesController < ApplicationController
+	before_action :require_permission, only: [:edit, :destroy]
+	
 	def index
 		@user = current_user.id
 		@entries = current_user.entries.all
@@ -7,7 +9,6 @@ class EntriesController < ApplicationController
   end
 
 	def show
-		@user = current_user.id
 		@entry = Entry.find(params[:id])
 	end
 	
@@ -19,13 +20,12 @@ class EntriesController < ApplicationController
   end
 
   def new
-		@user = current_user.id
 		@entry = Entry.new
   end
 
    def edit
-		 @user = current_user.id
-		 @entry = Entry.find(params[:id])
+		require_permission
+		@entry = Entry.find(params[:id])
   end
 
   def update
@@ -39,11 +39,17 @@ class EntriesController < ApplicationController
   end
 	
 	def destroy
-		@user = current_user.id
-		@entry = Entry.find(params[:id])
-		@entry.destroy
+			require_permission
+			@entry = current_user.entries.find(params[:id])
+			@entry.destroy
 
-		redirect_to entries_path
+			redirect_to entries_path
+	end
+	
+	def require_permission
+  	if current_user != Entry.find(params[:id]).user
+   	 redirect_to root_path
+  	end
 	end
 	
 private
