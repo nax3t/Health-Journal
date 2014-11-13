@@ -2,6 +2,8 @@ class EntriesController < ApplicationController
 	def index
 		@user = current_user.id
 		@entries = current_user.entries.all
+		@entries_by_date = @entries.group_by(&:date)
+		@date = params[:date] ? Date.parse(params[:date]) : Date.today
   end
 
 	def show

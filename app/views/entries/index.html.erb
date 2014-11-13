@@ -1,10 +1,15 @@
 <h1><%= "#{current_user.username.capitalize}'s Entries" %></h1>
-<% @entries.each do |entry| %>
-<h2><%= link_to entry.subject, entry_path(entry) %></h2>
-<p><%= entry.details %></p>
-<p><%= entry.date %></p>
-<p><%= link_to 'Edit', edit_entry_path(entry) %> | 
-	<%= link_to 'Delete', entry_path(entry), method: :delete, data: { confirm: 'Are you sure?' } %></p>
-<hr />
+<h2 id="month">
+	<%= link_to "<", date: @date.prev_month %> 
+	<%= @date.strftime("%B %Y") %>
+	<%= link_to ">", date: @date.next_month %></h2>
+<%= calendar @date do |date| %>
+<%= date.day %>
+	<% if @entries_by_date[date] %>
+		<ul>
+			<% @entries_by_date[date].each do |entry| %>
+			<li><%= link_to entry.subject, entry %></li>
+			<% end %>
+		</ul>
+	<% end %>
 <% end %>
-<p><%= link_to 'Create a New Journal Entry', new_entry_path %></p>
