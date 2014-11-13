@@ -6,7 +6,7 @@
 <%= calendar @date do |date| %>
 <%= date.day %>
 	<% if @entries_by_date[date] %>
-		<ul>
+		<ul class="entries">
 			<% @entries_by_date[date].each do |entry| %>
 			<li><%= link_to entry.subject, entry %></li>
 			<% end %>
