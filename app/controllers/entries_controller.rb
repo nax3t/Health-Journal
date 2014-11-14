@@ -54,7 +54,7 @@ class EntriesController < ApplicationController
 	
 private
 	def entry_params
-		params.require(:entry).permit(:subject, :details, :date)
+		params.require(:entry).permit(:title, :breakfast, :lunch, :dinner, :snacks, :prev_night_sleep, :rating)
   end
 	
 end

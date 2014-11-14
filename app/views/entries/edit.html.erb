@@ -1,6 +1,11 @@
 <h1>Edit Entry</h1>
 <%= simple_form_for(@entry, html: {:class => 'form-horizontal'} ) do |f| %>
-<p><%= f.input :subject, label: false, input_html: {:class => 'form-control', placeholder: "Subject"} %></p>
-<p><%= f.input :details, label: false, input_html: {:class => 'form-control', placeholder: "Details"} %></p>
+<p><%= f.input :title, label: false, input_html: {:class => 'form-control', placeholder: "Enter a simple title to describe this entry (i.e., Monday or Journal 01)"} %></p>
+<p><%= f.input :breakfast, label: false, input_html: {:class => 'form-control', placeholder: "Breakfast"} %></p>
+<p><%= f.input :lunch, label: false, input_html: {:class => 'form-control', placeholder: "Lunch"} %></p>
+<p><%= f.input :dinner, label: false, input_html: {:class => 'form-control', placeholder: "Dinner"} %></p>
+<p><%= f.input :snacks, label: false, input_html: {:class => 'form-control', placeholder: "Snacks (from the entire day, you can go back and edit this later to add more info)"} %></p>
+<p><%= f.input :prev_night_sleep, label: false, input_html: { min: '1', max: '24', :class => 'form-control', placeholder: "How many hours of sleep did you get last night?"} %></p>
+<p><%= f.input :rating, label: false, input_html: { min: '1', max: '10', :class => 'form-control', placeholder: "Rate your overall energy level on a scale from 1 to 10"} %></p>
 	<p><%= f.submit "Submit".html_safe, :class => 'btn btn-lg btn-success' %> </p>
 <% end %>

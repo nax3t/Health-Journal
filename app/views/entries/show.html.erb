@@ -1,7 +1,10 @@
 <h2><%= @entry.title %></h2>
 <p><strong>Breakfast: </strong><%= @entry.breakfast %></p>
 <p><strong>Lunch: </strong><%= @entry.lunch %></p>
-<p><strong>Dinner: </strong><%= @entry.lunch %></p>
+<p><strong>Dinner: </strong><%= @entry.dinner %></p>
+<p><strong>Snacks: </strong><%= @entry.snacks %></p>
+<p><strong>Previous Night's Sleep: </strong><%= @entry.prev_night_sleep %></p>
+<p><strong>Energy Rating: </strong><%= @entry.rating %></p>
 <p><%= link_to 'Edit', edit_entry_path(@entry) %> | 
 	<%= link_to 'Delete', entry_path(@entry), method: :delete, data: { confirm: 'Are you sure?' } %></p>
 <hr />
