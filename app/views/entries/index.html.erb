@@ -9,7 +9,7 @@
 	<% if @entries_by_date[date] %>
 		<ul class="entries">
 			<% @entries_by_date[date].each do |entry| %>
-			<li><%= link_to entry.subject, entry %></li>
+			<li><%= link_to entry.title, entry %></li>
 			<% end %>
 		</ul>
 	<% end %>

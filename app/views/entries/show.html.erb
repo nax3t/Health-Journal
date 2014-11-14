@@ -1,6 +1,7 @@
-<h2><%= @entry.subject %></h2>
-<p><%= @entry.details %></p>
-<p><%= @entry.date %></p>
+<h2><%= @entry.title %></h2>
+<p><strong>Breakfast: </strong><%= @entry.breakfast %></p>
+<p><strong>Lunch: </strong><%= @entry.lunch %></p>
+<p><strong>Dinner: </strong><%= @entry.lunch %></p>
 <p><%= link_to 'Edit', edit_entry_path(@entry) %> | 
 	<%= link_to 'Delete', entry_path(@entry), method: :delete, data: { confirm: 'Are you sure?' } %></p>
 <hr />
