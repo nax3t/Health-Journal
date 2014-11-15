@@ -1,16 +1,26 @@
-<h1><%= "#{current_user.username.capitalize}'s Entries" %></h1>
-<p><%= link_to 'Create a New Journal Entry', new_entry_path %></p>
-<h2 id="month">
-	<%= link_to "<", date: @date.prev_month %> 
-	<%= @date.strftime("%B %Y") %>
-	<%= link_to ">", date: @date.next_month %></h2>
-<%= calendar @date do |date| %>
-<%= date.day %>
-	<% if @entries_by_date[date] %>
-		<ul class="entries">
-			<% @entries_by_date[date].each do |entry| %>
-			<li><%= link_to entry.title, entry %></li>
+<div class="container">
+	<div class="row">
+		<div class="col-md-2">
+		</div>
+		<div class="col-md-8 well">
+			<h1><%= "#{current_user.username.capitalize}'s Entries" %></h1>
+			<p><%= link_to 'Create a New Journal Entry', new_entry_path %></p>
+			<h2 id="month">
+				<%= link_to "<", date: @date.prev_month %> 
+				<%= @date.strftime("%B %Y") %>
+				<%= link_to ">", date: @date.next_month %></h2>
+			<%= calendar @date do |date| %>
+			<%= date.day %>
+				<% if @entries_by_date[date] %>
+					<ul class="entries">
+						<% @entries_by_date[date].each do |entry| %>
+						<li><%= link_to entry.title, entry %></li>
+						<% end %>
+					</ul>
+				<% end %>
 			<% end %>
-		</ul>
-	<% end %>
-<% end %>
+		</div>
+		<div class="col-md-2">
+		</div>
+	</div>
+</div>

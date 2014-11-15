@@ -1,3 +1,13 @@
-<h1><%= "Hello #{current_user.username.capitalize}! Welcome to your Journal App." %></h1>
-<p><%= link_to 'Create a New Journal Entry', new_entry_path %></p>
-<p><%= link_to 'View Your Entries', entries_path %></p>
+<div class="container">
+	<div class="row">
+		<div class="col-md-2">
+		</div>
+		<div class="col-md-8 well">
+			<h1><%= "Hello #{current_user.username.capitalize}! Welcome to your Journal App." %></h1>
+			<p><%= link_to 'Create a New Journal Entry', new_entry_path %></p>
+			<p><%= link_to 'View Your Entries', entries_path %></p>
+		</div>
+		<div class="col-md-2">
+		</div>
+	</div>
+</div>
