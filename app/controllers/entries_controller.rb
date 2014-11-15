@@ -13,7 +13,7 @@ class EntriesController < ApplicationController
 	end
 	
 	def breakdown
-		
+		@entries = current_user.entries.all
 	end
 	
   def create
