@@ -12,6 +12,10 @@ class EntriesController < ApplicationController
 		@entry = Entry.find(params[:id])
 	end
 	
+	def breakdown
+		
+	end
+	
   def create
 		@entry = current_user.entries.create(entry_params)
 		@entry.date = Date.today
