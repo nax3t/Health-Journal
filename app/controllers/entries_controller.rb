@@ -19,8 +19,12 @@ class EntriesController < ApplicationController
   def create
 		@entry = current_user.entries.create(entry_params)
 		@entry.date = Date.today
-		@entry.save
-		redirect_to entries_path
+		if @entry.save	
+			redirect_to entries_path
+		else
+			flash.now[:alert] = "There were errors in the form."
+			render 'new'
+		end
   end
 
   def new
